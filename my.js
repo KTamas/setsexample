@@ -21,9 +21,9 @@ $(document).ready(function(){
     
 
     $.ajax({ 
-      async: false,
       beforeSend: function() {
         $('div.loader').show();
+        return false; //aghrougroue
       },
       type: 'POST',
       url: '/gimme',
