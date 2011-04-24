@@ -29,8 +29,7 @@ $(document).ready(function(){
       data: { words: getwords() },
       dataType: 'json',
       success: function(body) {
-        console.log(typeof(body));
-        console.log(typeof(getwords()));
+        var words = getwords();
         words.each(function(c, item) {
           where = body.indexOf(item);
           if ( where != -1) {
