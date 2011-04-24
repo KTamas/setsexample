@@ -30,7 +30,7 @@ $(document).ready(function(){
       dataType: 'json',
       success: function(body) {
         console.log(body);
-        var words = getwords();
+        console.log(getwords());
         words.each(function(c, item) {
           where = body.indexOf(item);
           if ( where != -1) {
