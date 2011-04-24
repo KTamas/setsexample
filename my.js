@@ -21,7 +21,7 @@ $(document).ready(function(){
     
 
     $.ajax({ 
-      beforeSend: function() {
+      beforeSend: function(x) {
         $('div.loader').show();
       },
       type: 'POST',
