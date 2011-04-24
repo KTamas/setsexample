@@ -23,7 +23,8 @@ $(document).ready(function(){
       type: 'POST',
       url: '/gimme',
       data: { words: getwords() },
-      beforeSend: $('div.loader').show(),
+//      beforeSend: $('div.loader').show(),
+      beforeSend: function() { alert('foo')},
       dataType: 'json',
       success: function(body) {
         $('input').each(function(c, item) {
