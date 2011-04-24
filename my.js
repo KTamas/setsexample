@@ -21,7 +21,8 @@ $(document).ready(function(){
     
 
     $.ajax({ 
-      beforeSend: function(x) {
+      async: false,
+      beforeSend: function() {
         $('div.loader').show();
       },
       type: 'POST',
