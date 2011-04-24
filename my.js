@@ -11,13 +11,13 @@ var getwords = function() {
 
 $(document).ready(function(){
   $('input').bind('blur', function(event) {
-    if (getwords().length != 3) {
+    if (getwords().length != 3) { //only if it's three, we'll have a manual one in the future
       return;
     }
 
     $.ajax({ 
       beforeSend: function() {
-        Zepto('div.loader').show();
+        $('div.loader').show();
       },
       type: 'POST',
       url: '/gimme',
