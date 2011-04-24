@@ -29,8 +29,18 @@ $(document).ready(function(){
       data: { words: getwords() },
       dataType: 'json',
       success: function(body) {
+        console.log(body);
+        getwords.each(function(c, item) {
+          where = body.indexOf(item);
+          if ( where != -1) {
+            body.splice(where, 1);
+          }
+        }
+        console.log(body);
         $('input').each(function(c, item) {
-          $(item).val(body[c]);
+          if ($(item).val() == '') {
+            $(item).val(body[c]);
+          }
         });
       },
       error: function() { alert("oops"); },
