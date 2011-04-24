@@ -24,7 +24,7 @@ $(document).ready(function(){
       url: '/gimme',
       data: { words: getwords() },
 //      beforeSend: $('div.loader').show(),
-      beforeSend: function() { alert('foo')},
+      beforeSend: function() { alert('foo');},
       dataType: 'json',
       success: function(body) {
         $('input').each(function(c, item) {
