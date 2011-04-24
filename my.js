@@ -6,7 +6,6 @@ var getwords = function() {
       words.push(value);
     }
   });
-  console.log(words);
   return words;
 }
 
