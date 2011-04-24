@@ -22,8 +22,7 @@ $(document).ready(function(){
 
     $.ajax({ 
       beforeSend: function() {
-       $('div.loader').show();
-       return true;
+        $('div.loader').css('visibility', 'visible'):
       },
       type: 'POST',
       url: '/gimme',
@@ -36,8 +35,7 @@ $(document).ready(function(){
       },
       error: function() { alert("oops"); },
       complete: function() {
-        $('div.loader').hide();
-        return true;
+        $('div.loader').css('visibility', 'hidden'):
       }
     });
 
