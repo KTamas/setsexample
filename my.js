@@ -42,7 +42,5 @@ $(document).ready(function(){
         $('div.loader').hide();
       }
     });
-
-    $('div.loader').hide();
   });
 });
