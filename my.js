@@ -31,7 +31,7 @@ $(document).ready(function(){
       success: function(body) {
         console.log(body);
         var words = getwords();
-        getwords.each(function(c, item) {
+        words.each(function(c, item) {
           where = body.indexOf(item);
           if ( where != -1) {
             body.splice(where, 1);
