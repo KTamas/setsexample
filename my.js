@@ -16,7 +16,8 @@ $(document).ready(function(){
     }
 
     $.ajax({ 
-      beforeSend: function($) {
+      beforeSend: function() {
+        console.log($);
         Zepto('div.loader').show();
       },
       type: 'POST',
