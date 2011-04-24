@@ -22,7 +22,8 @@ $(document).ready(function(){
 
     $.ajax({ 
       beforeSend: function() {
-        $('div.loader').show();
+        alert('foo');
+//        $('div.loader').show();
         return false; //aghrougroue
       },
       type: 'POST',
