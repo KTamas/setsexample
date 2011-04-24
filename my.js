@@ -18,10 +18,13 @@ $(document).ready(function(){
     if (getwords().length == 16) {
       return; // don't re-request
     }
-    alert('foo');
-    $('div.loader').show();
+    
 
     $.ajax({ 
+      beforeSend: function() {
+       $('div.loader').show();
+       return true;
+      },
       type: 'POST',
       url: '/gimme',
       data: { words: getwords() },
@@ -31,7 +34,11 @@ $(document).ready(function(){
           $(item).val(body[c]);
         });
       },
-      error: function() { alert("oops"); }
+      error: function() { alert("oops"); },
+      complete: function() {
+        $('div.loader').hide();
+        return true;
+      }
     });
 
     $('div.loader').hide();
