@@ -30,13 +30,12 @@ $(document).ready(function(){
       dataType: 'json',
       success: function(body) {
         var words = getwords();
-        words.each(function(c, item) {
+        for (item in words) {
           where = body.indexOf(item);
           if ( where != -1) {
             body.splice(where, 1);
           }
         });
-        console.log(body);
         $('input').each(function(c, item) {
           if ($(item).val() == '') {
             $(item).val(body[c]);
