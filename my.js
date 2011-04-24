@@ -24,7 +24,7 @@ $(document).ready(function(){
       type: 'POST',
       url: '/gimme',
       data: { words: getwords() },
-      beforeSend: $('#loader').show(),
+      beforeSend: $('div.loader').show(),
       dataType: 'json',
       success: function(body) {
         $('input').each(function(c, item) {
@@ -32,7 +32,7 @@ $(document).ready(function(){
         });
       },
       error: function() { alert("oops"); },
-      complete: $('#loader').hide()
+      complete: $('div.loader').hide()
     });
   });
 });
