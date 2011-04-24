@@ -20,19 +20,19 @@ $(document).ready(function(){
       return; // don't re-request
     }
 
-    $('div.loader').css('display: block');
     $.ajax({ 
       type: 'POST',
       url: '/gimme',
       data: { words: getwords() },
+      beforeSend: $('#loader').show(),
       dataType: 'json',
       success: function(body) {
         $('input').each(function(c, item) {
           $(item).val(body[c]);
         });
       },
-    error: function() { alert("oops"); }
+      error: function() { alert("oops"); },
+      complete: $('#loader').hide()
     });
-    $('div.loader').css('display: none');
   });
 });
