@@ -18,6 +18,7 @@ $(document).ready(function(){
     if (getwords().length == 16) {
       return; // don't re-request
     }
+    alert('foo');
     $('div.loader').show();
 
     $.ajax({ 
