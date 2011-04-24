@@ -17,6 +17,7 @@ $(document).ready(function(){
 
     $.ajax({ 
       beforeSend: function() {
+        console.log(arguments);
         return $('div.loader').show();
       },
       type: 'POST',
