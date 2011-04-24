@@ -2,7 +2,7 @@ var getwords = function() {
   var words = [];
   $('input').each(function(c, item) {
     var value = $(item).val();
-    if (value != '') {
+    if (value !== '') {
       words.push(value);
     }
   });
@@ -32,7 +32,7 @@ $(document).ready(function(){
           }
         }
         $('input').each(function(c, item) {
-          if ($(item).val() == '') {
+          if ($(item).val() === '') {
             $(item).val(body[c]);
           }
         });
