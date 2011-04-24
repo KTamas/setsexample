@@ -1,5 +1,16 @@
 var http = require('http');
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello World\nApp (setsexample) is running..');
-}).listen(9583);
+var googlesets = require('googlesets');
+var express = require('express');
+var app = express.createServer();
+app.use(express.bodyParser());
+app.use(app.router);
+
+app.use(express.static('.'));
+
+app.post('/gimme', function(req, res) {
+  googlesets.large(req.body.words, function(items) {
+    res.send(items);
+  });
+});
+
+app.listen(9583);
