@@ -17,7 +17,7 @@ $(document).ready(function(){
 
     $.ajax({ 
       beforeSend: function($) {
-        return $('div.loader').show();
+        Zepto('div.loader').show();
       },
       type: 'POST',
       url: '/gimme',
