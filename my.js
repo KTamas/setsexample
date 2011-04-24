@@ -1,7 +1,7 @@
 var getwords = function() {
   var words = [];
-  $('input').each(function(c, item) {
-    var value = $(item).val();
+  jQuery('input').each(function(c, item) {
+    var value = jQuery(item).val();
     if (value !== '') {
       words.push(value);
     }
@@ -9,15 +9,15 @@ var getwords = function() {
   return words;
 }
 
-$(document).ready(function(){
-  $('input').bind('blur', function(event) {
+jQuery(document).ready(function(){
+  jQuery('input').bind('blur', function(event) {
     if (getwords().length != 3) {
       return;
     }
 
-    $.ajax({ 
+    jQuery.ajax({ 
       beforeSend: function() {
-        return $('div.loader').show();
+        return jQuery('div.loader').show();
       },
       type: 'POST',
       url: '/gimme',
@@ -31,15 +31,15 @@ $(document).ready(function(){
             body.splice(where, 1);
           }
         }
-        $('input').each(function(c, item) {
-          if ($(item).val() === '') {
-            $(item).val(body[c]);
+        jQuery('input').each(function(c, item) {
+          if (jQuery(item).val() === '') {
+            jQuery(item).val(body[c]);
           }
         });
       },
       error: function() { alert("oops"); },
       complete: function() {
-        $('div.loader').hide();
+        jQuery('div.loader').hide();
       }
     });
   });
