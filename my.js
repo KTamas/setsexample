@@ -11,14 +11,9 @@ var getwords = function() {
 
 $(document).ready(function(){
   $('input').bind('blur', function(event) {
-    if (getwords().length < 3) {
+    if (getwords().length != 3) {
       return;
     }
-
-    if (getwords().length == 16) {
-      return; // don't re-request
-    }
-    
 
     $.ajax({ 
       beforeSend: function() {
