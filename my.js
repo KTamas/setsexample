@@ -19,6 +19,8 @@ $(document).ready(function(){
     if (getwords().length == 16) {
       return; // don't re-request
     }
+
+    $('div.loader').show();
     $.ajax({ 
       type: 'POST',
       url: '/gimme',
@@ -31,5 +33,6 @@ $(document).ready(function(){
       },
     error: function() { alert("oops"); }
     });
+    $('div.loader').hide();
   });
 });
