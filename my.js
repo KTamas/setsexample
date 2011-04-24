@@ -22,9 +22,7 @@ $(document).ready(function(){
 
     $.ajax({ 
       beforeSend: function() {
-        alert('foo');
-//        $('div.loader').show();
-        return false; //aghrougroue
+        $('div.loader').show();
       },
       type: 'POST',
       url: '/gimme',
