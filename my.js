@@ -35,7 +35,7 @@ $(document).ready(function(){
           if ( where != -1) {
             body.splice(where, 1);
           }
-        });
+        }
         $('input').each(function(c, item) {
           if ($(item).val() == '') {
             $(item).val(body[c]);
