@@ -18,21 +18,21 @@ $(document).ready(function(){
     if (getwords().length == 16) {
       return; // don't re-request
     }
+    $('div.loader').show();
 
     $.ajax({ 
       type: 'POST',
       url: '/gimme',
       data: { words: getwords() },
-//      beforeSend: $('div.loader').show(),
-      beforeSend: function() { alert('foo');},
       dataType: 'json',
       success: function(body) {
         $('input').each(function(c, item) {
           $(item).val(body[c]);
         });
       },
-      error: function() { alert("oops"); },
-      complete: $('div.loader').hide()
+      error: function() { alert("oops"); }
     });
+
+    $('div.loader').hide();
   });
 });
