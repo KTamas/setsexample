@@ -20,7 +20,7 @@ $(document).ready(function(){
       return; // don't re-request
     }
 
-    $('div.loader').show();
+    $('div.loader').css('display: block');
     $.ajax({ 
       type: 'POST',
       url: '/gimme',
@@ -33,6 +33,6 @@ $(document).ready(function(){
       },
     error: function() { alert("oops"); }
     });
-    $('div.loader').hide();
+    $('div.loader').css('display: none');
   });
 });
