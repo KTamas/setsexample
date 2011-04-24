@@ -17,7 +17,7 @@ $(document).ready(function(){
 
     $.ajax({ 
       beforeSend: function() {
-        $('div.loader').show();
+        return $('div.loader').show();
       },
       type: 'POST',
       url: '/gimme',
