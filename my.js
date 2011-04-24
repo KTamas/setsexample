@@ -30,7 +30,8 @@ $(document).ready(function(){
       dataType: 'json',
       success: function(body) {
         console.log(body);
-        getwords().each(function(c, item) {
+        var words = getwords();
+        getwords.each(function(c, item) {
           where = body.indexOf(item);
           if ( where != -1) {
             body.splice(where, 1);
